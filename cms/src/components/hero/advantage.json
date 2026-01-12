@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_hero_advantages",
+  "info": {
+    "displayName": "Advantage",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sparkle",
+        "leaf",
+        "fabric",
+        "comfort"
+      ]
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
