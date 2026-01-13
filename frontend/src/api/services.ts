@@ -24,3 +24,8 @@ export const getBenefits = async () => {
   const { data } = await strapi.get("/benefit?populate=*");
   return data.data;
 };
+
+export const getTalkAbout = async () => {
+  const { data } = await strapi.get("/talk-about?populate=*");
+  return data.data;
+};

@@ -549,6 +549,36 @@ export interface ApiProductProduct extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiTalkAboutTalkAbout extends Struct.SingleTypeSchema {
+  collectionName: 'talk_abouts';
+  info: {
+    displayName: 'TalkAbout';
+    pluralName: 'talk-abouts';
+    singularName: 'talk-about';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    images: Schema.Attribute.Media<'images', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::talk-about.talk-about'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   collectionName: 'testimonials';
   info: {
@@ -1101,6 +1131,7 @@ declare module '@strapi/strapi' {
       'api::feature.feature': ApiFeatureFeature;
       'api::hero.hero': ApiHeroHero;
       'api::product.product': ApiProductProduct;
+      'api::talk-about.talk-about': ApiTalkAboutTalkAbout;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

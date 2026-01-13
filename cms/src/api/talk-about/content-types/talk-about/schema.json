@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "talk_abouts",
+  "info": {
+    "singularName": "talk-about",
+    "pluralName": "talk-abouts",
+    "displayName": "TalkAbout"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  }
+}
