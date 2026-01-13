@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "heroes",
+  "collectionName": "benefits",
   "info": {
-    "singularName": "hero",
-    "pluralName": "heroes",
-    "displayName": "Hero"
+    "singularName": "benefit",
+    "pluralName": "benefits",
+    "displayName": "Benefit"
   },
   "options": {
     "draftAndPublish": true
@@ -16,7 +16,7 @@
     },
     "advantages": {
       "type": "component",
-      "component": "hero.advantage",
+      "component": "benefit.advantage",
       "repeatable": true
     },
     "carouselImages": {
@@ -26,15 +26,12 @@
         "images"
       ]
     },
-    "cta": {
-      "type": "component",
-      "component": "shared.cta",
-      "repeatable": false
-    },
-    "review": {
-      "type": "component",
-      "component": "hero.review",
-      "repeatable": true
+    "logos": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
     }
   }
 }

@@ -430,6 +430,37 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBenefitBenefit extends Struct.SingleTypeSchema {
+  collectionName: 'benefits';
+  info: {
+    displayName: 'Benefit';
+    pluralName: 'benefits';
+    singularName: 'benefit';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    advantages: Schema.Attribute.Component<'benefit.advantage', true>;
+    carouselImages: Schema.Attribute.Media<'images', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::benefit.benefit'
+    > &
+      Schema.Attribute.Private;
+    logos: Schema.Attribute.Media<'images', true>;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
   collectionName: 'features';
   info: {
@@ -481,6 +512,7 @@ export interface ApiHeroHero extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::hero.hero'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    review: Schema.Attribute.Component<'hero.review', true>;
     title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -1065,6 +1097,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::benefit.benefit': ApiBenefitBenefit;
       'api::feature.feature': ApiFeatureFeature;
       'api::hero.hero': ApiHeroHero;
       'api::product.product': ApiProductProduct;

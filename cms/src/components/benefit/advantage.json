@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_benefit_advantages",
+  "info": {
+    "displayName": "Advantage"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sparkle",
+        "leaf",
+        "fabric",
+        "comfort"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}
