@@ -11,14 +11,16 @@ interface HeaderProp {
 const BenefitsHeader: FC<HeaderProp> = ({ logos }) => {
   console.log("logos", logos);
   return (
-    <Box component="header">
+    <Box component="header" sx={{ marginBottom: "15px" }}>
       <Box
+        textAlign="center"
         sx={{
           width: "100%",
-          backgroundColor: "#F6EEE4", // цвет инфо-бара
         }}
       >
-        <Typography sx={{ color: "rgba(134, 135, 135, 1)" }}>
+        <Typography
+          sx={{ color: "rgba(134, 135, 135, 1)", marginBottom: "15px" }}
+        >
           as seen in
         </Typography>
         <Stack direction="row" justifyContent="space-around">
