@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "works_orders",
+  "info": {
+    "singularName": "works-order",
+    "pluralName": "works-orders",
+    "displayName": "WorksOrder"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "component",
+      "component": "works-order.answer",
+      "repeatable": true
+    }
+  }
+}

@@ -26,7 +26,6 @@ const styles = {
     left: 60,
     width: 400,
     height: 600,
-    borderRadius: 8,
     overflow: "hidden",
     boxShadow: "0px 24px 40px rgba(0, 0, 0, 0.12)",
 
@@ -51,9 +50,9 @@ const styles = {
     left: 0,
     width: 160,
     height: 200,
-    borderRadius: 8,
     overflow: "hidden",
     boxShadow: "0px 16px 32px rgba(0, 0, 0, 0.12)",
+    border: "4px solid rgba(240, 238, 239, 1)",
 
     "& img": {
       width: "100%",
@@ -76,7 +75,7 @@ const styles = {
     right: 0,
     width: 160,
     height: 200,
-    borderRadius: 8,
+    border: "4px solid rgba(240, 238, 239, 1)",
     overflow: "hidden",
     boxShadow: "0px 16px 32px rgba(0, 0, 0, 0.12)",
 

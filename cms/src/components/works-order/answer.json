@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_works_order_answers",
+  "info": {
+    "displayName": "Answer"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sparkle",
+        "leaf",
+        "fabric",
+        "comfort"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "color": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

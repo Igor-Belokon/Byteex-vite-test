@@ -29,3 +29,13 @@ export const getTalkAbout = async () => {
   const { data } = await strapi.get("/talk-about?populate=*");
   return data.data;
 };
+
+export const getWorksOrder = async () => {
+  const { data } = await strapi.get("/works-order?populate=*");
+  return data.data;
+};
+
+export const getUserContent = async () => {
+  const { data } = await strapi.get("/user-content?populate=*");
+  return data.data;
+};

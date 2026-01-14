@@ -9,7 +9,6 @@ interface HeaderProp {
 }
 
 const BenefitsHeader: FC<HeaderProp> = ({ logos }) => {
-  console.log("logos", logos);
   return (
     <Box component="header" sx={{ marginBottom: "15px" }}>
       <Box

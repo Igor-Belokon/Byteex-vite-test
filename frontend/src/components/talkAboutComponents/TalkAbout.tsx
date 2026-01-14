@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Stack, Avatar } from "@mui/material";
+import { Box, Typography, Button, Stack } from "@mui/material";
 import { type FC } from "react";
 
 import { type TalkAboutData } from "../../types/talkAbout";
@@ -12,8 +12,6 @@ interface TalkAboutProp {
 
 const TalkAbout: FC<TalkAboutProp> = ({ talkAbout }) => {
   if (!talkAbout) return null;
-
-  console.log("talkAbout", talkAbout);
 
   const { title, text, images } = talkAbout;
 

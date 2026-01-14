@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_user_content_reviews",
+  "info": {
+    "displayName": "Review"
+  },
+  "options": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "rating": {
+      "type": "integer",
+      "min": 1,
+      "max": 5
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

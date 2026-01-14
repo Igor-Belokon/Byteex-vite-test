@@ -617,6 +617,66 @@ export interface ApiTestimonialTestimonial extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiUserContentUserContent extends Struct.SingleTypeSchema {
+  collectionName: 'user_contents';
+  info: {
+    displayName: 'UserContent';
+    pluralName: 'user-contents';
+    singularName: 'user-content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Schema.Attribute.Media<'images', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::user-content.user-content'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    review: Schema.Attribute.Component<'user-content.review', true>;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiWorksOrderWorksOrder extends Struct.SingleTypeSchema {
+  collectionName: 'works_orders';
+  info: {
+    displayName: 'WorksOrder';
+    pluralName: 'works-orders';
+    singularName: 'works-order';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    answer: Schema.Attribute.Component<'works-order.answer', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::works-order.works-order'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1133,6 +1193,8 @@ declare module '@strapi/strapi' {
       'api::product.product': ApiProductProduct;
       'api::talk-about.talk-about': ApiTalkAboutTalkAbout;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;
+      'api::user-content.user-content': ApiUserContentUserContent;
+      'api::works-order.works-order': ApiWorksOrderWorksOrder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

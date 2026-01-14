@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "user_contents",
+  "info": {
+    "singularName": "user-content",
+    "pluralName": "user-contents",
+    "displayName": "UserContent"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "content": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "review": {
+      "type": "component",
+      "component": "user-content.review",
+      "repeatable": true
+    }
+  }
+}

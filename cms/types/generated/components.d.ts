@@ -62,6 +62,42 @@ export interface SharedCta extends Struct.ComponentSchema {
   };
 }
 
+export interface UserContentReview extends Struct.ComponentSchema {
+  collectionName: 'components_user_content_reviews';
+  info: {
+    displayName: 'Review';
+  };
+  attributes: {
+    author: Schema.Attribute.String;
+    avatar: Schema.Attribute.Media<'images'>;
+    rating: Schema.Attribute.Integer &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 5;
+          min: 1;
+        },
+        number
+      >;
+    subtitle: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+  };
+}
+
+export interface WorksOrderAnswer extends Struct.ComponentSchema {
+  collectionName: 'components_works_order_answers';
+  info: {
+    displayName: 'Answer';
+  };
+  attributes: {
+    color: Schema.Attribute.String;
+    icon: Schema.Attribute.Enumeration<
+      ['sparkle', 'leaf', 'fabric', 'comfort']
+    >;
+    text: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -69,6 +105,8 @@ declare module '@strapi/strapi' {
       'hero.advantage': HeroAdvantage;
       'hero.review': HeroReview;
       'shared.cta': SharedCta;
+      'user-content.review': UserContentReview;
+      'works-order.answer': WorksOrderAnswer;
     }
   }
 }
