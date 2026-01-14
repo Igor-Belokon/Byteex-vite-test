@@ -39,3 +39,8 @@ export const getUserContent = async () => {
   const { data } = await strapi.get("/user-content?populate=*");
   return data.data;
 };
+
+export const getFQA = async () => {
+  const { data } = await strapi.get("/faq?populate=*");
+  return data.data;
+};

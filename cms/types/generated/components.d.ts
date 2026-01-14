@@ -14,6 +14,17 @@ export interface BenefitAdvantage extends Struct.ComponentSchema {
   };
 }
 
+export interface FaqQuestion extends Struct.ComponentSchema {
+  collectionName: 'components_faq_questions';
+  info: {
+    displayName: 'Question';
+  };
+  attributes: {
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface HeroAdvantage extends Struct.ComponentSchema {
   collectionName: 'components_hero_advantages';
   info: {
@@ -102,6 +113,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'benefit.advantage': BenefitAdvantage;
+      'faq.question': FaqQuestion;
       'hero.advantage': HeroAdvantage;
       'hero.review': HeroReview;
       'shared.cta': SharedCta;

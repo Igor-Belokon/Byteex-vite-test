@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_faq_questions",
+  "info": {
+    "displayName": "Question"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

@@ -461,6 +461,33 @@ export interface ApiBenefitBenefit extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiFaqFaq extends Struct.SingleTypeSchema {
+  collectionName: 'faqs';
+  info: {
+    displayName: 'FAQ';
+    pluralName: 'faqs';
+    singularName: 'faq';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    images: Schema.Attribute.Media<'images', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::faq.faq'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    question: Schema.Attribute.Component<'faq.question', true>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
   collectionName: 'features';
   info: {
@@ -1188,6 +1215,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::benefit.benefit': ApiBenefitBenefit;
+      'api::faq.faq': ApiFaqFaq;
       'api::feature.feature': ApiFeatureFeature;
       'api::hero.hero': ApiHeroHero;
       'api::product.product': ApiProductProduct;
