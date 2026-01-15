@@ -1,22 +1,23 @@
 import { Typography, Stack, Avatar } from "@mui/material";
 import { type FC } from "react";
 
-import { type DataBlock } from "../../types/infoBaner";
-interface DataBlockProp {
-  data: DataBlock;
+import { type Group } from "../../types/final";
+interface FinalBlockProp {
+  data: Group;
 }
 
-const DataBlockComponent: FC<DataBlockProp> = ({ data }) => {
+const FinalBlockComponent: FC<FinalBlockProp> = ({ data }) => {
   if (!data) return null;
 
-  const { icon, value, discription } = data;
+  const { icon, text } = data;
 
   return (
     <Stack
+      direction="row"
       alignItems="center"
       justifyContent="space-around"
       sx={{
-        height: "120px",
+        height: "50px",
         width: "100%",
         "&:not(:last-child)": {
           borderRight: "1px solid rgba(196, 196, 196, 0.5)",
@@ -28,7 +29,7 @@ const DataBlockComponent: FC<DataBlockProp> = ({ data }) => {
           width: 28,
           height: 28,
           backgroundColor: "#f1ecff",
-          color: "#3f51b5",
+          color: "rgba(103, 104, 105, 1)",
           fontSize: 14,
         }}
       >
@@ -37,28 +38,16 @@ const DataBlockComponent: FC<DataBlockProp> = ({ data }) => {
 
       <Typography
         sx={{
-          fontSize: { xs: "15px", md: "22px" },
-
-          color: "rgba(21, 0, 91, 1)",
-          letterSpacing: "-0.01em",
-        }}
-      >
-        {value}
-      </Typography>
-      <Typography
-        sx={{
           fontSize: { xs: "8px", md: "14px" },
 
-          color: "rgba(21, 0, 91, 1)",
+          color: "rgba(103, 104, 105, 1)",
           letterSpacing: "-0.01em",
         }}
       >
-        {discription}
+        {text}
       </Typography>
-
-      <Stack direction="row"></Stack>
     </Stack>
   );
 };
 
-export default DataBlockComponent;
+export default FinalBlockComponent;

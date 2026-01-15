@@ -518,6 +518,37 @@ export interface ApiFeatureFeature extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiFinalFinal extends Struct.SingleTypeSchema {
+  collectionName: 'finals';
+  info: {
+    displayName: 'Final';
+    pluralName: 'finals';
+    singularName: 'final';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    cardLogo: Schema.Attribute.Media<'images', true>;
+    carouselImages: Schema.Attribute.Media<'images', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    group: Schema.Attribute.Component<'final.group', true>;
+    icon: Schema.Attribute.Enumeration<['time']>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::final.final'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    sale: Schema.Attribute.String;
+    text: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHeroHero extends Struct.SingleTypeSchema {
   collectionName: 'heroes';
   info: {
@@ -1246,6 +1277,7 @@ declare module '@strapi/strapi' {
       'api::benefit.benefit': ApiBenefitBenefit;
       'api::faq.faq': ApiFaqFaq;
       'api::feature.feature': ApiFeatureFeature;
+      'api::final.final': ApiFinalFinal;
       'api::hero.hero': ApiHeroHero;
       'api::info-baner.info-baner': ApiInfoBanerInfoBaner;
       'api::product.product': ApiProductProduct;

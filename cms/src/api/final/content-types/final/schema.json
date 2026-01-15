@@ -1,0 +1,49 @@
+{
+  "kind": "singleType",
+  "collectionName": "finals",
+  "info": {
+    "singularName": "final",
+    "pluralName": "finals",
+    "displayName": "Final"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "carouselImages": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "group": {
+      "type": "component",
+      "component": "final.group",
+      "repeatable": true
+    },
+    "sale": {
+      "type": "string"
+    },
+    "cardLogo": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "time"
+      ]
+    }
+  }
+}

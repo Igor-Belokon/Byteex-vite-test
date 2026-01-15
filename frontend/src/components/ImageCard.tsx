@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import type { HeroImage } from "../../types/hero";
-import { getStrapiMedia } from "../../utils/getStrapiMedia";
+import type { HeroImage } from "../types/hero";
+import { getStrapiMedia } from "../utils/getStrapiMedia";
 
 type Props = {
   image: HeroImage;

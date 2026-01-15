@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_final_groups",
+  "info": {
+    "displayName": "Group"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sparkle",
+        "leaf",
+        "fabric",
+        "comfort"
+      ]
+    },
+    "text": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

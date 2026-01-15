@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { type FC, useState } from "react";
 
-import { type HeroImage } from "../../types/hero";
+import { type HeroImage } from "../types/hero";
 
 import { ImageCard } from "./ImageCard";
 
@@ -26,7 +26,7 @@ const sideControlStyle = {
     `,
 };
 
-const HeroCarousel: FC<Props> = ({ images }) => {
+const Carousel: FC<Props> = ({ images }) => {
   const [index, setIndex] = useState(0);
 
   if (!images || images.length < 3) return null;
@@ -53,4 +53,4 @@ const HeroCarousel: FC<Props> = ({ images }) => {
   );
 };
 
-export default HeroCarousel;
+export default Carousel;

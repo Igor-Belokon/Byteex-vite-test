@@ -2,7 +2,7 @@ import { Box, Typography, Button, Stack, Avatar } from "@mui/material";
 import { type FC } from "react";
 
 import { type HeroData } from "../../types/hero";
-import HeroCarousel from "./Carousel";
+import Carousel from "../Carousel";
 import { HeroReviewCard } from "./HeroReviewCard";
 
 interface HeroProps {
@@ -103,7 +103,7 @@ const Hero: FC<HeroProps> = ({ hero }) => {
           {review && <HeroReviewCard review={review[0]} />}
         </Box>
 
-        <HeroCarousel images={carouselImages} />
+        <Carousel images={carouselImages} />
       </Box>
     </Box>
   );

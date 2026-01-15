@@ -49,3 +49,8 @@ export const getInfoBaner = async () => {
   const { data } = await strapi.get("/info-baner?populate=*");
   return data.data;
 };
+
+export const getFinal = async () => {
+  const { data } = await strapi.get("/final?populate=*");
+  return data.data;
+};

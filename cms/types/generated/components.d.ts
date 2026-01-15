@@ -25,6 +25,19 @@ export interface FaqQuestion extends Struct.ComponentSchema {
   };
 }
 
+export interface FinalGroup extends Struct.ComponentSchema {
+  collectionName: 'components_final_groups';
+  info: {
+    displayName: 'Group';
+  };
+  attributes: {
+    icon: Schema.Attribute.Enumeration<
+      ['sparkle', 'leaf', 'fabric', 'comfort']
+    >;
+    text: Schema.Attribute.String;
+  };
+}
+
 export interface HeroAdvantage extends Struct.ComponentSchema {
   collectionName: 'components_hero_advantages';
   info: {
@@ -128,6 +141,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'benefit.advantage': BenefitAdvantage;
       'faq.question': FaqQuestion;
+      'final.group': FinalGroup;
       'hero.advantage': HeroAdvantage;
       'hero.review': HeroReview;
       'info-baner.data-block': InfoBanerDataBlock;
