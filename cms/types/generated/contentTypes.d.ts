@@ -547,6 +547,35 @@ export interface ApiHeroHero extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiInfoBanerInfoBaner extends Struct.SingleTypeSchema {
+  collectionName: 'info_baners';
+  info: {
+    displayName: 'InfoBaner';
+    pluralName: 'info-baners';
+    singularName: 'info-baner';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    dataBlock: Schema.Attribute.Component<'info-baner.data-block', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::info-baner.info-baner'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiProductProduct extends Struct.SingleTypeSchema {
   collectionName: 'products';
   info: {
@@ -1218,6 +1247,7 @@ declare module '@strapi/strapi' {
       'api::faq.faq': ApiFaqFaq;
       'api::feature.feature': ApiFeatureFeature;
       'api::hero.hero': ApiHeroHero;
+      'api::info-baner.info-baner': ApiInfoBanerInfoBaner;
       'api::product.product': ApiProductProduct;
       'api::talk-about.talk-about': ApiTalkAboutTalkAbout;
       'api::testimonial.testimonial': ApiTestimonialTestimonial;

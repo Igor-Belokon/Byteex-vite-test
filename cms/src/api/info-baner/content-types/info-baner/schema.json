@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "info_baners",
+  "info": {
+    "singularName": "info-baner",
+    "pluralName": "info-baners",
+    "displayName": "InfoBaner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "dataBlock": {
+      "type": "component",
+      "component": "info-baner.data-block",
+      "repeatable": true
+    }
+  }
+}

@@ -61,6 +61,20 @@ export interface HeroReview extends Struct.ComponentSchema {
   };
 }
 
+export interface InfoBanerDataBlock extends Struct.ComponentSchema {
+  collectionName: 'components_info_baner_data_blocks';
+  info: {
+    displayName: 'DataBlock';
+  };
+  attributes: {
+    discription: Schema.Attribute.String;
+    icon: Schema.Attribute.Enumeration<
+      ['sparkle', 'leaf', 'fabric', 'comfort']
+    >;
+    value: Schema.Attribute.String;
+  };
+}
+
 export interface SharedCta extends Struct.ComponentSchema {
   collectionName: 'components_shared_ctas';
   info: {
@@ -116,6 +130,7 @@ declare module '@strapi/strapi' {
       'faq.question': FaqQuestion;
       'hero.advantage': HeroAdvantage;
       'hero.review': HeroReview;
+      'info-baner.data-block': InfoBanerDataBlock;
       'shared.cta': SharedCta;
       'user-content.review': UserContentReview;
       'works-order.answer': WorksOrderAnswer;

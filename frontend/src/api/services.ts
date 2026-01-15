@@ -44,3 +44,8 @@ export const getFQA = async () => {
   const { data } = await strapi.get("/faq?populate=*");
   return data.data;
 };
+
+export const getInfoBaner = async () => {
+  const { data } = await strapi.get("/info-baner?populate=*");
+  return data.data;
+};

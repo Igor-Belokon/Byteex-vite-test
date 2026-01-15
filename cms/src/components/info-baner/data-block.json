@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_info_baner_data_blocks",
+  "info": {
+    "displayName": "DataBlock"
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "sparkle",
+        "leaf",
+        "fabric",
+        "comfort"
+      ]
+    },
+    "value": {
+      "type": "string"
+    },
+    "discription": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
