@@ -75,7 +75,7 @@ const Final: FC<FinalProp> = ({ data }) => {
         >
           Customize Your Outfit
         </Button>
-        <Stack direction="row">
+        <Stack direction="row" alignItems="center" spacing={2}>
           <Avatar
             sx={{
               width: 28,

@@ -17,6 +17,7 @@ const FinalBlockComponent: FC<FinalBlockProp> = ({ data }) => {
       alignItems="center"
       justifyContent="space-around"
       sx={{
+        padding: "20px",
         height: "50px",
         width: "100%",
         "&:not(:last-child)": {
